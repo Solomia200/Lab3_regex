@@ -232,14 +232,13 @@ if __name__ == "__main__":
     regex_pattern = "a*4+g*hi"
 
     regex_compiled = RegexFSM(regex_pattern)
-    # regex_compiled.print_automaton()
+    
     print(regex_compiled.check_string("aaaaaa444ghi"))  # True
     print(regex_compiled.check_string("4hi"))  # True
     print(regex_compiled.check_string("meow"))  # False
 
-    regex_pattern = "a*4+g*hi"
+    regex_pattern = "a*4.+hi"
     regex_compiled = RegexFSM(regex_pattern)
-    # regex_compiled.print_automaton()
-    print(regex_compiled.check_string("aaaaaa444ghi"))  # True
-    print(regex_compiled.check_string("4hi"))  # True
+    print(regex_compiled.check_string("aaaaaa4uhi"))  # True
+    print(regex_compiled.check_string("4uhi"))  # True
     print(regex_compiled.check_string("meow"))  # False
